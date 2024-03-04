@@ -1,0 +1,1 @@
+The Gentec-EO Installer must be run first before using LabVIEW VIs.  This will install Gentec E-O's software and the correct USB drivers.  See the SDX-1153 Users Manual section 1.5 Installation.

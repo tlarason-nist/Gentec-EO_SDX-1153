@@ -1,0 +1,193 @@
+From:	Sid Levingston <slevingston@gentec-eo.com>
+Sent:	Monday, May 6, 2013 1:09 PM
+To:	Larason, Thomas C
+Subject:	RE: Problems with SDX-1153 Software Installation
+
+Categories:	Amp Calibration, Important
+
+Hi Tom,
+
+#NOTE Explains manual gain on output port, several commands, and start up.
+Yes, the SDX1153 puts the gain on the comport when you change the gain manually. I did this for debug 
+purposes and I left it active.
+
+The DAT command forces a new conversion from the ADC and sends it to the com port.
+
+The commands not in the manual are:
+
+MFG is a command or a query. If sent with no argument, it returns the stored manufacture date. If sent 
+with a command, a string up to 20 characters long, the new value is stored in Flash.
+
+The following three commands are all performed at power up.
+
+CAL forces a self-calibration of the current offset DAC
+RST forces a reset of the current offset DAC
+INI forces an initialization of the current offset DAC
+
+So the useful one may be the manufacture date as it will allow you to store up to 20 character in Flash, 
+the same as the SNM command. 
+
+Thanks,
+
+Sid
+
+
+.
+From: Larason, Thomas C [mailto:thomas.larason@nist.gov]  
+Sent: Monday, May 06, 2013 9:24 AM 
+To: Sid Levingston 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Hi Sid,
+
+I have been writing a LabVIEW driver for the SDX-1153 and I hope I can ask you to answer a few more 
+questions.
+
+1) When manually changing the gain, the SDX-1153 seems to send the new gain automatically (e.g., 
+10Momh range) if the program has an open VISA communication to the SDX-1153. Am I understanding 
+the operation correctly?
+2) When operating the SDX-1153 as a laser power meter without an external DVM, is the DAC command 
+the typical way to read the current from the photodiode?
+3) Are there any other commands like the SNM not listed in the documentation, like a Reset or Self-
+Test?
+
+Thanks, 
+Tom Larason
+
+From: Larason, Thomas C  
+Sent: Friday, March 15, 2013 10:00 AM 
+To: 'Sid Levingston'; 'Don Dooley' 
+Cc: Houston, Jeanne M; Yoon, Howard W. Dr. 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Sid,
+
+Thanks a lot for your quick answers. The SNM command is great. With it being stored in flash we could 
+use it to store the serial number and maybe the calibration date. I guess it's an undocumented feature 
+which only gets me wondering what other wonderful features you guys have built in. Thanks again.
+
+-Tom
+
+From: Sid Levingston [mailto:slevingston@gentec-eo.com]  
+Sent: Thursday, March 14, 2013 5:02 PM 
+To: Larason, Thomas C; 'Don Dooley' 
+Cc: Houston, Jeanne M; Yoon, Howard W. Dr. 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Hi Tom,
+
+1.	Yes, it will only communicate with one instrument at a time.
+2.	Yes you will.
+#NOTE Explains the IDN command returns only model # and use SNM to store unique id (like SN).
+3.	IDN returns the model. You can use SNM<20 character string> to set an unique identifier. This 
+will allow you to have software identify which device it is talking to. The unique string is stored 
+in flash so it is persistent until you change it.
+
+Thanks,
+
+Sid
+
+From: Larason, Thomas C [mailto:thomas.larason@nist.gov]  
+Sent: Thursday, March 14, 2013 1:44 PM 
+To: Sid Levingston; 'Don Dooley' 
+Cc: Houston, Jeanne M; Yoon, Howard W. Dr. 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Sid,
+
+Three of more quick questions.
+
+1)	We were planning on controlling several of the amplifiers (4-5) at a time with one computer. 
+The software that came with the amplifiers will only work with one amp connected to the 
+computer at a time. Am I correct?
+
+2)	I tried connecting two up and the program would automatically connect to one of the two amps 
+and I could not select with of the two was selected. So it appears we will have to write our own 
+software to control multiple amplifiers. Right?
+
+3)	The IDN query only returns the model number and not the serial number. Correct?
+
+Thanks, 
+Tom Larason
+
+From: Larason, Thomas C  
+Sent: Thursday, March 14, 2013 3:55 PM 
+To: 'Sid Levingston'; 'Don Dooley' 
+Cc: Houston, Jeanne M. (jeanne.houston@nist.gov); Yoon, Howard W. Dr. (howard.yoon@nist.gov) 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Hi Sid,
+
+Opps, my fault. The SDX-1153 program is there. I overlooked it both in the Start menu and on the 
+Program Files folder. Two strikes for me. Thanks for your help.
+
+-Tom
+
+From: Sid Levingston [mailto:slevingston@gentec-eo.com]  
+Sent: Thursday, March 14, 2013 3:31 PM 
+To: 'Don Dooley'; Larason, Thomas C 
+Subject: RE: Problems with SDX-1153 Software Installation
+
+Hi Tom,
+
+#NOTE Explains how SDX installer works.
+Two installs are done, one for the SDX-1153 software, and one for VISA. The software installer tries to 
+load VISA in case it is not already on the host PC. This message is letting you know it doesn't need to 
+load. The actual SDX-1153 software should have installed. If it is already on the host PC, it will not install. 
+The behavior you are seeing is what happens when the SDX software is already on the PC and the VISA 
+version is on the PC an is newer. Are you sure the SDX-1153 software is not already on the PC? 
+
+If it is not I can try and make you an installer that does not load VISA, but this really should work as is 
+unless the installer is corrupted on the CD.
+
+Let me know,
+
+Sid
+
+From: Don Dooley [mailto:ddooley@gentec-eo.com]  
+Sent: Thursday, March 14, 2013 12:08 PM 
+To: 'Sid Levingston' 
+Subject: FW: Problems with SDX-1153 Software Installation
+
+Sid,
+
+Please give Tom a hand with installation of the SDX-1153 software.
+
+Thanks much,
+
+
+Don Dooley
+General Manager
+
+Gentec-EO USA, Inc.
+5825 Jean Road Center
+Lake Oswego, OR 97035
+(503)697-1870
+(503)697-0633 FAX
+ddooley@gentec-eo.com
+www.gentec-eo.com 
+
+ 
+
+ 
+From: Larason, Thomas C [mailto:thomas.larason@nist.gov]  
+Sent: Thursday, March 14, 2013 11:38 AM 
+To: Don Dooley (ddooley@gentec-eo.com) 
+Cc: Houston, Jeanne M; Yoon, Howard W. Dr. 
+Subject: Problems with SDX-1153 Software Installation
+
+Don,
+
+I ran into a problem trying to install the software for the new SDX-1153 amplifiers. The computer I'm 
+using already has LabVIEW installed and I get the following message during installation, so it seems that 
+the only choice is to cancel the installation. Any suggestions?
+ 
+
+Also there are two installer.exe files on the CD-ROM. Not sure which one to use, but they seem to be the 
+same. Both has the same results listed above.
+ 
+
+
+Thanks, 
+Tom Larason
+

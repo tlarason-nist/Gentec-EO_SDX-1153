@@ -1,0 +1,40 @@
+Gentec-EO SDX-1153/1226-x
+
+Here is a list of commands we have written LabVIEW code for.
+The minimal list of commands are:
+Command IDN
+*Command MFG
+*Command SNM
+Command VER
+Command TIA
+Command DAT
+ 
+SDX-1153/1226 Python Commands Wish List
+Command IDN but maybe change to the more standard "*IDN?"
+*Command RST
+*Command INI
+*Command CAL
+Command RLY
+Command DAC
+*Command MFG
+*Command SNM
+Command VER
+Command TIA
+Command ZRO
+Command DAT
+Command BAS
+Command INC
+Command DEC
+*Not in the SDX-1153 User Manual v2.1, Sid Levingston (Gentec-EO) sent them to me in series of emails last dated May 6, 2013, see file Gentec-EO SDX-1153 Commands_undocumented.txt.
+ 
+ 
+From the SDX-1153 User Manual v2.1, 1.6.2 SDX-1153 Serial Commands:
+ 
+All commands and replies are followed by a carriage return (0x0D) and a line feed
+(0x0A). Unless otherwise noted, if a command is used with no arguments it will become
+a query. All commands are case insensitive.
+ 
+All commands reply with:
+OK if the command executed correctly.
+ERR if the command could not be executed.
+All Queries reply with the item that was queried or ERR if the query could not be executed.
