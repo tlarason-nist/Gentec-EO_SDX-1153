@@ -40,7 +40,7 @@ The executable is available from the publicly available GitHub repository. On th
 The first operation after the GUI opens is to click on the **Scan** button. This will scan the serial ports (i.e., USB) for Gentec-EO SDX-1153 and SDX-1226 amps. The serial numbers of the amplifiers found will be listed in the **Connected Amplifiers** box and the **Amplifier** dropdown. Figure 1 is an image of the GUI after the **Scan** button has been clicked. Two SDX-1153's have been found connected to the host computer.
 
 <p align="center">
-    <img src=images/ampGUIscanned1.png>
+    <img src=images/ampGUIscanned1u.png>
     <figcaption><b>Figure 1: </b>Gentec-EO SDX-1153 GUI after scanning host computer ports and finding two devices, serial numbers 507007 and 501946.</figcaption>
 </p>
 
@@ -48,7 +48,7 @@ The first operation after the GUI opens is to click on the **Scan** button. This
 Selecting one of the SN listed in the **Connected Amplifiers** box will show the Amplifier ID (manufacturer, model, sn, and firmware version) in the **Amplifier ID Information** box. The ID information for an 507007 is shown in Figure 2.
 
 <p align="center">
-    <img src=images/ampGUIscanned2.png>
+    <img src=images/ampGUIscanned2u.png>
     <figcaption><b>Figure 2: </b>ID information for Gentec-EO SDX-1153 sn 507007.</figcaption>
 </p>
 
@@ -56,7 +56,7 @@ Selecting one of the SN listed in the **Connected Amplifiers** box will show the
 To read or set the gain range (10<sup>x</sup>) of an amplifier, select the sn from the **Amplifier** dropdown box. Then select the command operation (Read Gain or Set Gain) from the **Amplifier Command** dropdown. If reading the gain range (GUI default), click the **Send Command** button. The current gain range of the selected amp will be displayed in the **Amp Gain** box. Figure 3 shows the GUI after the Read Gain command was sent to amp 507007.
 
 <p align="center">
-    <img src=images/ampGUIreadgain.png>
+    <img src=images/ampGUIreadgainu.png>
     <figcaption><b>Figure 3: </b><b>AMP Gain</b> box shows the current gain range of 5 for Gentec-EO SDX-1153 sn 507007.</figcaption>
 </p>
 
@@ -64,7 +64,7 @@ To read or set the gain range (10<sup>x</sup>) of an amplifier, select the sn fr
 If setting the gain, select the **Set Gain** command and use the **Set Gain input box** to select the gain range. Then click the **Send Command** button. The new gain range will be displayed in the **Amp Gain** box. Setting the gain range of amp 507007 to 6 is shown in Figure 4.
 
 <p align="center">
-    <img src=images/ampGUIsetgain.png>
+    <img src=images/ampGUIsetgainu.png>
     <figcaption><b>Figure 4: </b><b>AMP Gain</b> box shows the current gain range of 6 for Gentec-EO SDX-1153 sn 507007.</figcaption>
 </p>
 
@@ -73,7 +73,7 @@ To reset an amplifier to the "power on" state, select **Amp Init**, then click t
 Note: This is not typically needed since the reinit process is run during the scanning process when an SDX-1153 or SDX-1226 is found. Figure 5 shows the GUI after the **Amp Init** command is sent.
 
 <p align="center">
-    <img src=images/ampGUIampinit.png>
+    <img src=images/ampGUIampinitu.png>
     <figcaption><b>Figure 5: </b><b>AMP Reinitialized</b> box shows the amp sn (507007) and the text "Amplifier Reinitialized".</figcaption>
 </p>
 
@@ -81,7 +81,7 @@ Note: This is not typically needed since the reinit process is run during the sc
 To quit the program and exit the GUI, click on the **Main** menu item in the top left of the GUI window, then select **Quit** from the dropdown list. This is shown in Figure 6.
 
 <p align="center">
-    <img src=images/ampGUIquit.png>
+    <img src=images/ampGUIquitu.png>
     <figcaption><b>Figure 6: </b>Quitting the program.</figcaption>
 </p>
 
@@ -89,7 +89,7 @@ To quit the program and exit the GUI, click on the **Main** menu item in the top
 The the **Main** menu item also has selections for **Help** and **About**. See Figure 7. **Help** will give a short list of typical operations. **About** displays basic information about this program.
 
 <p align="center">
-    <img src=images/ampGUImenu.png>
+    <img src=images/ampGUImenuu.png>
     <figcaption><b>Figure 7: </b>Selecting <b>Help</b> will show typical operation steps. <b>About</b> will show information about this program.</figcaption>
 </p>
 
